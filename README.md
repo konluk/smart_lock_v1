@@ -21,4 +21,4 @@ Webová služba slúžiaca na vytváranie rezervácií do rôznych typov objekto
 
 # HW: Raspberry, Nextion display, fingerprint sensor
 
-![Alt text](images/hw.png?raw=true "Home2")
+![Alt text](images/hw.jpg?raw=true "Home2")
