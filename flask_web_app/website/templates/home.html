@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <!-- Popper JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+     <link rel="stylesheet" type="text/css" href="static/bootstrap-datepicker.css" >
+     
+     <script type="text/javascript" src="static/bootstrap-datepicker.js"></script>
+   
+     <script src="static/reservation.js"></script>  
+</head>
+
+<body>     
+
+<div class="jumbotron p-3">
+     <div class="row" align="center">
+          <div class="col">
+               <h1 class="p-2">Smart Lock</h1>
+               <h6 class="p-2">Vytvarajte a spravujte svoje rezervacie.</h6>
+          </div>
+          <div class="col">   
+               <h1 class="p-2">#DATE</h1>
+               <h1 class="p-2">#TIME</h1>                           
+          </div>
+          <div class="col">
+               <h4 class="p-2 bg-dark text-white" style="width:60%;">{{ User.first_name }} {{ User.last_name }}</h4>
+               <form action="/logout" method="get"> 
+                    <button type="submit" class="btn btn-secondary bg-dark text-white" style="width:60%;">Odhlasit</button> 
+               </form>   
+          </div>
+     </div>  	
+</div>         
+
+
+<div class="row p-4">
+     <div class="col">
+          <div class="container p-2">
+               <h2 align="center">Nova rezervacia</h2> 
+               <form action="/reservation" method="post">
+                    <div class="form-group">
+                    <label for="email">Datum:</label>
+                    <div class="dates" >          
+                         <input type="text" class="form-control" id="usr1" name="date" value="XX" autocomplete="off" >
+                    </div>    
+                    </div>
+                         <div class="form-group">
+                              <label for="pwd">Cas:</label>
+                              <select class="form-control" id="hours" name="time">                                    
+                              </select>     
+                         </div>  
+                         <button type="submit" class="btn btn-primary" style="width:100%;">Rezervovat</button>
+               </form>
+          </div>
+     </div>
+
+
+     <div class="col">
+          <div class="container p-2">
+               <h2 align="center">Moje rezervacie</h2>
+               <br>
+               <table class="table">
+                    <thead align="center">
+                         <tr>
+                         <th scope="col">#</th>
+                         <th scope="col">Datum</th>
+                         <th scope="col">Cas</th> 
+                         <th scope="col"></th>                    
+                         </tr>
+                    </thead>
+                    <tbody align="center">          
+                    {% for element in data %}          
+                    <TR> 
+                         <TD>{{element[0]}}</TD>
+                         <TD>{{element[1]}}</TD>
+                         <TD>{{element[2]}}</TD>
+                         <TD align="center"><button class="btn btn-danger" style="width:60%;" onclick="deleteReservation('{{element[3]}}')">X</button></TD>   
+                    </TR>                 
+                    {% endfor %}
+                    </tbody>
+               </table>
+          </div>  
+     </div>
+
+</div>
+
+
+
+</body>
+</html>
