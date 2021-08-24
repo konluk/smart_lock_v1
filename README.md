@@ -1,6 +1,6 @@
 # Diplomová práca - Smart lock
 
-Webová služba slúžiaca na vytváranie rezervácií do rôznych typov objektov. Užívateľ si vytvorí rezerváciu na určitú hodinu, po príchode do objektu naskenuje odtlačok svojho prstu, zadá dočasne vygenerovaný kód z emailu (2 faktorová autorizácia) a následne mu bude umožnený vstup do objektu. 
+Webová služba slúžiaca na vytváranie rezervácií do rôznych typov objektov. Užívateľ si vytvorí rezerváciu na určitú hodinu, po príchode do objektu naskenuje odtlačok svojho prsta, zadá dočasne vygenerovaný kód z emailu (2 faktorová autorizácia) a následne mu bude umožnený vstup do objektu. 
 
 **Projekt je vo vývoji.**
 
